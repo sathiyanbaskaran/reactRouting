@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// import App from './App';
 import App from './App';
+import  {useState} from 'react';
 import reportWebVitals from './reportWebVitals';
+import Dashboard from './Dashboard';
 
 ReactDOM.render(
   <React.StrictMode>

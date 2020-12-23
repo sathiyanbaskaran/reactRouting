@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Login from './Login';
+import Dashboard from './Dashboard';
+import accessDenied from './accessDenied';
+
+// Router implemented for navigation
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Login} exact />
+        <Route path="/Dashboard" component={Dashboard} exact />
+        <Route path="/accessDenied" component={accessDenied} exact />
+      </Switch>
+      </BrowserRouter>
+    </React.Fragment>
   );
 }
 
